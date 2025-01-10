@@ -1,45 +1,4 @@
 
-
-// import React from "react";
-//
-// function Contact() {
-//     return (
-//         <section
-//             id="contact"
-//             className="min-h-screen flex items-center justify-center bg-gray-50 p-6"
-//         >
-//             <div className="p-8 bg-white shadow-lg rounded-lg max-w-md w-full">
-//                 <h2 className="text-3xl font-bold text-center mb-4">Contact Me</h2>
-//                 <form className="space-y-4">
-//                     <input
-//                         type="text"
-//                         placeholder="Your Name"
-//                         className="w-full p-2 border border-gray-300 rounded"
-//                     />
-//                     <input
-//                         type="email"
-//                         placeholder="Your Email"
-//                         className="w-full p-2 border border-gray-300 rounded"
-//                     />
-//                     <textarea
-//                         placeholder="Your Message"
-//                         className="w-full p-2 border border-gray-300 rounded"
-//                     ></textarea>
-//                     <button
-//                         type="submit"
-//                         className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-//                     >
-//                         Send
-//                     </button>
-//                 </form>
-//             </div>
-//         </section>
-//     );
-// }
-//
-// export default Contact;
-
-
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
 
@@ -59,6 +18,7 @@ function Contact() {
             .then(
                 (result) => {
                     alert("Message sent successfully!");
+                    form.current.reset();
                 },
                 (error) => {
                     alert("Failed to send the message. Please try again later.");
