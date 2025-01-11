@@ -1,8 +1,25 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    // Close the menu when scrolling
+    useEffect(() => {
+        const handleScroll = () => {
+            if (isMenuOpen) setIsMenuOpen(false);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [isMenuOpen]);
+
+    // Close the menu on navigation
+    const handleNavigation = () => {
+        setIsMenuOpen(false);
+    };
 
     return (
         <header className="fixed top-0 left-0 w-full bg-white shadow z-10">
@@ -60,24 +77,28 @@ function Header() {
                 <a
                     href="#home"
                     className="block px-4 py-2 text-customCyan hover:bg-gray-100"
+                    onClick={handleNavigation}
                 >
                     Home
                 </a>
                 <a
                     href="#about"
                     className="block px-4 py-2 text-customCyan hover:bg-gray-100"
+                    onClick={handleNavigation}
                 >
                     About
                 </a>
                 <a
                     href="#projects"
                     className="block px-4 py-2 text-customCyan hover:bg-gray-100"
+                    onClick={handleNavigation}
                 >
                     Projects
                 </a>
                 <a
                     href="#contact"
                     className="block px-4 py-2 text-customCyan hover:bg-gray-100"
+                    onClick={handleNavigation}
                 >
                     Contact
                 </a>
