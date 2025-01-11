@@ -8,7 +8,7 @@ function Footer() {
             <nav className="max-w-7xl mx-auto flex justify-between items-center p-4">
                 {/* Branding */}
                 <div className="text-lg font-bold text-customCyan">
-                    © 2025 My Portfolio
+                    ©2025 Tristan Fry
                 </div>
 
                 {/* Social Media Links */}

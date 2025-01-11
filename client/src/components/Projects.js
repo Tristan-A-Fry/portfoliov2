@@ -20,12 +20,6 @@ function Projects() {
             image: f1DataVisualizer,
             link: "https://github.com/Tristan-A-Fry/FormulaOneDataVisualizer",
         },
-        {
-            title: "Portfolio Website",
-            description: "A personal portfolio site built with React and Tailwind CSS.",
-            image: portfolioImage, 
-            link: "https://tristanfry.com",
-        },
     ];
 
     return (
@@ -53,6 +47,18 @@ function Projects() {
 
                         {/* Project Description */}
                         <p className="text-gray-700 text-center mt-2">{project.description}</p>
+
+                        {/* Learn More Button */}
+                        <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-4 inline-block text-black text-sm font-semibold relative group"
+                        >
+                            <span className="relative z-10">Learn More</span> {/*Have to add this to prevent text from disappearing when hovering*/}
+                            <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-customCyan group-hover:bg-customCyan transition-all duration-500"></span>
+                            <span className="absolute inset-0 bg-customCyan opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></span>
+                        </a>
                     </div>
                 ))}
             </div>
