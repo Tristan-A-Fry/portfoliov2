@@ -1,10 +1,11 @@
 import React from "react";
 import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
+import { BiLogoPostgresql } from "react-icons/bi";
 import { SiJavascript, SiMysql, SiExpress, SiDotnet} from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
 function About() {
     return (
-        <section id="about" className="min-h-screen bg-gray-50 p-6 text-black flex flex-col items-center justify-center">
+        <section id="about" className="min-h-screen bg-[#333333] p-6 text-white flex flex-col items-center justify-center">
             {/* Title */}
             <h2 className="text-4xl font-bold text-customCyan mb-12 text-center">About</h2>
 
@@ -21,9 +22,9 @@ function About() {
 
                     {/* About Paragraph */}
                     <p className="text-lg leading-relaxed">
-                        I am a brand-new graduate from the University of Houston with a B.S in Computer Science and a minor in Mathematics. 
-                        I am a full stack developer with a deep passion for the backend, and specializing in tools such as Express and .Net.  
-                        When I am not at my computer I spend my time reading, playing video games, and keeping fit.
+                        I am a recent graduate from the University of Houston with a B.S in Computer Science and a minor in Mathematics. 
+                        I am a full stack developer with a deep passion for the backend, specializing in tools such as Express and .Net.  
+                        When I am not at my computer I spend my time reading, playing video games, and working out.
 
                     </p>
                 </div>
@@ -69,6 +70,10 @@ function About() {
                     <div className="flex flex-col items-center">
                         <FaGitAlt className="text-5xl text-orange-500" />
                         <p className="mt-2">Git</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <BiLogoPostgresql className="text-5xl text-blue-500" />
+                        <p className="mt-2">PostgresSQL</p>
                     </div>
                 </div>
             </div>

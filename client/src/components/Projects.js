@@ -1,71 +1,133 @@
 
-
 import React from "react";
-import portfolioImage from '../assets/images/portfolio.png';
-import f1DataVisualizer from '../assets/images/f1datavisualizer.png';
-import volunteerWebApp from '../assets/images/volunteerapp.png'
+import {HoverBorderGradient} from "../components/ui/HoverBorderGradient.js";
+import portfolioImage from "../assets/images/portfolio.png";
+import f1DataVisualizer from "../assets/images/f1datavisualizer.png";
+import volunteerWebApp from "../assets/images/volunteerapp.png";
+import fryreadsApp from "../assets/images/fryreads_demo.png";
+import { VscAzure } from "react-icons/vsc";
+import {
+  SiReact,
+  SiPostgresql,
+  SiDotnet,
+  SiTailwindcss,
+  SiGo,
+  SiMysql,
+  SiNodedotjs,
+  SiEx
+} from "react-icons/si";
 
+
+
+import {
+  FeatureCard,
+  Card,
+} from "../components/ui/FeatureCard";
 
 function Projects() {
-    const projects = [
-        {
-            title: "FullStack Volunteer Web Application",
-            description: "A full stack web application to emulate managment for a volunteer organization. Built with React, Tailwind CSS, Express, Node.js, and MySql. Includes unit testing.",
-            image: volunteerWebApp,
-            link: "https://github.com/Tristan-A-Fry/Full-Stack-Volunteer-Web-App",
-        },
-        {
-            title: "Formula One Data Visualizer",
-            description: "A data visualizer for current and historical Formula One data. Built in React, and Go",
-            image: f1DataVisualizer,
-            link: "https://github.com/Tristan-A-Fry/FormulaOneDataVisualizer",
-        },
-    ];
+  const projects = [
+    {
+      title: "Fryreads - Book Tracking App",
+      description:
+        "A book tracking app built with .NET Core, React, and PostgreSQL. Hosted on Azure.",
+      image: fryreadsApp,
+      link: "https://lively-ocean-0565abc10.6.azurestaticapps.net/",
+      feature: {
+        title: "Built With",
+        description: ".NET, React, PostgreSQL, Azure",
+        icons: [
+          () => <SiTailwindcss className="text-purple-500 h-6 w-6" />,
+          () => <SiPostgresql className="text-blue-600 h-6 w-6" />,
+          () => <SiReact className="text-cyan-400 h-6 w-6" />,
+          () => <SiDotnet className="text-purple-500 h-6 w-6" />,
+          () => <VscAzure className="text-blue-400 h-6 w-6" />
+        ]
+      }
+    },
+    {
+      title: "Formula One Data Visualizer",
+      description:
+        "A powerful dashboard to explore historical and current F1 race data using Go and React.",
+      image: f1DataVisualizer,
+      link: "https://github.com/Tristan-A-Fry/FormulaOneDataVisualizer",
+      feature: {
+        title: "Built With",
+        description: "React, Go, TailwindCSS",
+        icons: [
+          () => <SiReact className="text-cyan-400 h-6 w-6" />,
+          () => <SiGo className="text-purple-500 h-6 w-6" />,
+          () => <SiTailwindcss className="text-blue-600 h-6 w-6" />
+        ]
+      }
+    },
+    {
+      title: "Volunteer Matching Web App",
+      description:
+        "A full-stack platform that allows admins to match volunteers with events based on interests.",
+      image: volunteerWebApp,
+      link: "https://github.com/Tristan-A-Fry/volunteer-matching-app",
+      feature: {
+        title: "Built With",
+        description: "MySQL, Express, React, Node.js",
+        icons: [
+          () => <SiNodedotjs className="text-purple-500 h-6 w-6" />,
+          () => <SiReact className="text-cyan-400 h-6 w-6" />,
+          () => <SiMysql className="text-blue-600 h-6 w-6" />
+        ]
+      }
+    },
+  ];
 
-    return (
-        <section id="projects" className="min-h-screen bg-gray-100 p-6">
-            <h1 className="text-4xl font-bold text-center mb-6 text-customCyan">
-                My Projects
-            </h1>
-            <div className="max-w-6xl mx-auto space-y-8">
-                {projects.map((project, index) => (
-                    <div
-                        key={index}
-                        className="flex flex-col items-center bg-white shadow-md rounded-lg overflow-hidden p-4"
-                    >
-                        {/* Clickable Image */}
-                        <a href={project.link} target="_blank" rel="noopener noreferrer">
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                className="w-full h-60 object-cover rounded-lg hover:opacity-80 transition"
-                            />
-                        </a>
 
-                        {/* Project Title */}
-                        <h2 className="text-2xl font-bold mt-4">{project.title}</h2>
+  return (
+    <section className="py-12 px-4 md:px-16 bg-[#333333]" id="projects">
+      <h2 className="text-3xl font-bold mb-8 text-white text-center">
+        Projects
+      </h2>
+      <div className="flex flex-col gap-12">
+        {projects.map((project, index) => (
+          <div key={index} className="max-w-10xl w-full mx-auto">
+            <Card className="flex flex-col md:flex-row gap-8 items-start w-full max-w-10xl mx-auto">
+              <div className="md:w-3/5 w-full self-end">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="rounded-lg mb-4 w-full object-cover h-[400px] md:h-[400px]"
+                />
+                <h3 className="text-xl font-semibold mb-2 text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-400 mb-4">{project.description}</p>
+                <HoverBorderGradient
+                  as="a"
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  duration={1} // customize the rotation speed
+                  className="text-sm font-semibold"
+                  containerClassName="mt-4"
+                >
+                  View Project
+                </HoverBorderGradient>
+              </div>
 
-                        {/* Project Description */}
-                        <p className="text-gray-700 text-center mt-2">{project.description}</p>
-
-                        {/* Learn More Button */}
-                        <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-4 inline-block text-black text-sm font-semibold relative group"
-                        >
-                            <span className="relative z-10">Learn More</span> {/*Have to add this to prevent text from disappearing when hovering*/}
-                            <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-customCyan group-hover:bg-customCyan transition-all duration-500"></span>
-                            <span className="absolute inset-0 bg-customCyan opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></span>
-                        </a>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
+              <div className="md:w-2/5 w-full mt-12">
+                <FeatureCard
+                  title={project.feature.title}
+                  description={project.feature.description}
+                  icons={project.feature.icons}
+                />
+              </div>
+            </Card>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Projects;
+
+
 
 

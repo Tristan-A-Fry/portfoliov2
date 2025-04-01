@@ -22,10 +22,10 @@ function Header() {
     };
 
     return (
-        <header className="fixed top-0 left-0 w-full bg-white shadow z-10">
+        <header className="fixed top-0 left-0 w-full bg-[#1a1a1a] text-white shadow z-50">
             <nav className="max-w-7xl mx-auto flex justify-between items-center p-4">
                 {/* Logo */}
-                <a href="#home" className="text-lg font-bold text-customCyan">
+                <a href="#home" className="text-lg hover:text-customCyan">
                     Tristan Fry
                 </a>
 
