@@ -5,6 +5,7 @@ import portfolioImage from "../assets/images/portfolio.png";
 import f1DataVisualizer from "../assets/images/f1datavisualizer.png";
 import volunteerWebApp from "../assets/images/volunteerapp.png";
 import fryreadsApp from "../assets/images/fryreads_demo.png";
+import imsApp from "../assets/images/ims_demo.png";
 import { VscAzure } from "react-icons/vsc";
 import {
   SiReact,
@@ -34,7 +35,25 @@ function Projects() {
       link: "https://lively-ocean-0565abc10.6.azurestaticapps.net/",
       feature: {
         title: "Built With",
-        description: ".NET, React, PostgreSQL, Azure",
+        description: ".NET, React, PostgreSQL, Azure, and TailwindCSS",
+        icons: [
+          () => <SiTailwindcss className="text-purple-500 h-6 w-6" />,
+          () => <SiPostgresql className="text-blue-600 h-6 w-6" />,
+          () => <SiReact className="text-cyan-400 h-6 w-6" />,
+          () => <SiDotnet className="text-purple-500 h-6 w-6" />,
+          () => <VscAzure className="text-blue-400 h-6 w-6" />
+        ]
+      }
+    },
+    {
+      title: "Inventory Management System",
+      description:
+        "An inventory management system to mansge inventory and project details, built with .NET Core, React, and PostgreSQL.",
+      image: imsApp,
+      link: "https://github.com/Tristan-A-Fry/FrysIMS",
+      feature: {
+        title: "Built With",
+        description: ".NET, React, PostgreSQL, Azure, and TailwindCSS",
         icons: [
           () => <SiTailwindcss className="text-purple-500 h-6 w-6" />,
           () => <SiPostgresql className="text-blue-600 h-6 w-6" />,
